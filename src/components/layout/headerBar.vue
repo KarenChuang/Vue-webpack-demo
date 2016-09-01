@@ -2,12 +2,16 @@
 	header {
 		background: #555;
 		color: #fff;
-		padding:20px;
+		position: fixed;
+		width: 100%;
+		padding: 10px;
 		span {
 			display: block;
 		}
 		.title {
-			font-size: 18px;
+			font-size: 30px;
+			display: inline-block;
+			margin-bottom: 5px;
 		}
 		.sub-title {
 			font-size: 14px;

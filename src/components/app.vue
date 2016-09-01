@@ -1,13 +1,13 @@
 <style lang="sass">
-$bgColor: #F6F6F6;
+$bgColor: #ebebeb;
 
 body {
   background-color: $bgColor;
   margin: 0;
 }
+
 .parent {
-	height: 200px;
-	background-color:#74A39D;
+
 }
 </style>
 
@@ -25,7 +25,7 @@ import HeaderBar from './layout/HeaderBar.vue'
 export default {
 	data() {
 		return {
-			titleMsg: '大标题',
+			titleMsg: '一级标题',
 			subtitleMsg: '二级标题'
 		}
 	},

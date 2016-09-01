@@ -2,31 +2,49 @@
 .list-content {
 	display: flex;
 	flex-direction: column; //决定主轴的方向,它怎么排，主轴就怎么排
-	// justify-content: center;
 	align-items: center; //在交叉轴上，也就是现在的水平方向
+	.box {
+		height: 70px;
+	}
+	.list-item {
+		width: 90%;
+		display: flex;
+		height: 90px;
+		background: #fff;
+		margin: 10px 0 0px 0;
+		border-radius: 6px;
+		-webkit-box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.34);
+		-moz-box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.34);
+		box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.34);
+		.item-img {
+			width: 28%;
+			border-radius: 6px;
+		}
+		.item-text {
+			width: 72%;
+			background: #fff;
+			padding: 8px;
+		  box-sizing: border-box;
+		   margin-left: -2%;
+		  span {
+		  	font-size: 20px;
+		  	line-height: 1.2;
+		  }
+		}
+	}
 }
-.item-img {
-	height:100%;
-  margin-right: 1em;
-}
-.list-item {
-	width: 90%;
-	display: flex;
-	height: 80px;
-	background: #F6D595;
-	margin: 10px 0 10px 0;
-}
-.item-text {
 
-}
+
+
 </style>
 
 <template>
 	<div class="list-content">
-		<div class="list-item" v-for="item in lists">
-			<img class="item-img" src=".././assets/kanshan.jpg" 
+		<div class="box"></div>
+		<div class="list-item" v-for="item in lists" >
+			<img class="item-img" src=".././assets/01.jpeg" 
 					 alt="kanshan">
-			<p class="item-text">{{ item.text }}</p>
+			<div class="item-text"><span>{{ item.text }}</span></div>
 		</div>
 	</div>
 </template>
@@ -37,10 +55,32 @@ export default {
 		return {
 			lists: [
 				{
-					text: '单页应用非常的简单，使用 Vue.js 开发，整个应用已经被拆分成了独立的组件。在使用 vue-router 时，我们需要做的就是把路由映射'
+					text: '单页应用非常的简单使用简单单使用简单个应用'
 				},
 				{
-					text: '单页应用非常的简单，使用 Vue.js 开发，整个应用已经被拆分成了独立的组件。在使用 vue-router 时，我们需要做的就是把路由映射'
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},
+				{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},
+				{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},
+				{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},{
+					text: '单页应用非常的简单使用简单单使用简单个应用'
+				},
+				{
+					text: '单页应用非常的简单，使用 Vue.js 开发，整个应'
 				}
 			]
 		}
