@@ -25,7 +25,7 @@ import HeaderBar from './layout/HeaderBar.vue'
 export default {
 	data() {
 		return {
-			titleMsg: '一级标题',
+			titleMsg: '法治东航',
 			subtitleMsg: '二级标题'
 		}
 	},

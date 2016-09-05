@@ -1,6 +1,6 @@
 <style lang="sass">
 	header {
-		background: #555;
+		background: #1E89E0;
 		color: #fff;
 		position: fixed;
 		width: 100%;
@@ -9,7 +9,7 @@
 			display: block;
 		}
 		.title {
-			font-size: 30px;
+			font-size: 20px;
 			display: inline-block;
 			margin-bottom: 5px;
 		}
@@ -22,7 +22,7 @@
 <template>
 	<header>
 		<span class="title">{{ title }}</span>
-		<span class="sub-title">{{ subtitle }}</span>
+		<!-- <span class="sub-title">{{ subtitle }}</span> -->
 	</header>
 </template>
 

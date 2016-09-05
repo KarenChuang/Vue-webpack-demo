@@ -25,11 +25,12 @@
 			background: #fff;
 			padding: 8px;
 		  box-sizing: border-box;
-		   margin-left: -2%;
-		  span {
-		  	font-size: 20px;
-		  	line-height: 1.2;
-		  }
+		  margin-left: -2%;
+		  word-wrap: break-word; 
+			word-break: normal; 
+			overflow: hidden;
+			font-size: 18px;
+			line-height: 1.2;
 		}
 	}
 }
@@ -41,10 +42,13 @@
 <template>
 	<div class="list-content">
 		<div class="box"></div>
-		<div class="list-item" v-for="item in lists" >
-			<img class="item-img" src=".././assets/01.jpeg" 
+		<div class="list-item" v-for="item in lists">
+			<router-link to="/parent/detail">detail</router-link>
+			<img class="item-img"  :src="item.logo_url"
 					 alt="kanshan">
-			<div class="item-text"><span>{{ item.text }}</span></div>
+			<div class="item-text">
+				<span>{{ item.text }}</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -53,38 +57,14 @@
 export default {
 	data () {
 		return {
-			lists: [
-				{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},
-				{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},
-				{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},
-				{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},
-				{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},{
-					text: '单页应用非常的简单使用简单单使用简单个应用'
-				},
-				{
-					text: '单页应用非常的简单，使用 Vue.js 开发，整个应'
-				}
-			]
+			lists: []
 		}
-	}
+	},
+	created () {
+    this.$http.get('img.json').then(function(res){
+    	this.lists = res.json();
+    })
+  },
 }
 </script>
 

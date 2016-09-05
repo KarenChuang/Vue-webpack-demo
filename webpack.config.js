@@ -1,17 +1,21 @@
 var path = require('path')
 var Webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ip = require('ip');
+
 
 module.exports = {
   entry: './src/main.js',
 
   output: {
-    publicPath: 'http://localhost:3000/',
+    publicPath: 'http://'+ip.address()+':3000/',
+    // publicPath: 'http://localhost:3000/',
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',
   },
 
   devServer: {
+    host: ip.address(),
     port:3000,
     historyApiFallback: true,
     hot: true,
