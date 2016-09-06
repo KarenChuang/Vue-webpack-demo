@@ -31,7 +31,21 @@ module.exports = {
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style!css!autoprefixer' },
       { test: /\.scss$/, loader: 'style!css!sass?sourceMap' },
-      { test: /\.(png|jpg|jpeg)$/, loader: 'url-loader?limit=8192' },
+      {
+        test: /\.(png|jpg|gif|svg|ico)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'assets/[name].[ext]'
+        }
+      }, {
+        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'fonts/[name].[ext]'
+        }
+      },
       { test: /\.(html|tpl)$/, loader: 'html-loader' },
     ]
   },

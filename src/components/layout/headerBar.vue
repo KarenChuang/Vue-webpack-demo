@@ -22,7 +22,7 @@
 <template>
 	<header>
 		<span class="title">{{ title }}</span>
-		<!-- <span class="sub-title">{{ subtitle }}</span> -->
+		<span class="sub-title">{{ subtitle }}</span>
 	</header>
 </template>
 

@@ -1,19 +1,15 @@
 <style lang="sass">
-$bgColor: #ebebeb;
+$bgColor: rgb(230,230,230);
 
 body {
   background-color: $bgColor;
   margin: 0;
 }
-
-.parent {
-
-}
 </style>
 
 <template>
 	<div id="app">
-    <header-bar :title="titleMsg" :subtitle="subtitleMsg"></header-bar>
+    
     <router-view class="parent"></router-view>
   </div>
 </template>

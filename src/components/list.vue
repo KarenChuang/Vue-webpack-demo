@@ -4,7 +4,7 @@
 	flex-direction: column; //决定主轴的方向,它怎么排，主轴就怎么排
 	align-items: center; //在交叉轴上，也就是现在的水平方向
 	.box {
-		height: 70px;
+		height: 55px;
 	}
 	.list-item {
 		width: 90%;
@@ -31,32 +31,37 @@
 			overflow: hidden;
 			font-size: 18px;
 			line-height: 1.2;
+			text-decoration: none;
+			color: #444;
 		}
 	}
 }
-
-
 
 </style>
 
 <template>
 	<div class="list-content">
+		<header-bar :title="titleMsg" :subtitle="subtitleMsg"></header-bar>
 		<div class="box"></div>
+		<router-link to="/parent/detail"></router-link>
 		<div class="list-item" v-for="item in lists">
-			<router-link to="/parent/detail">detail</router-link>
 			<img class="item-img"  :src="item.logo_url"
 					 alt="kanshan">
-			<div class="item-text">
+			<router-link to="/main/detail" class="item-text">
 				<span>{{ item.text }}</span>
-			</div>
+			</router-link>
 		</div>
 	</div>
 </template>
 
 <script>
+import HeaderBar from './layout/HeaderBar.vue'
+
 export default {
 	data () {
 		return {
+			titleMsg: '法治东航',
+			subtitleMsg:'',
 			lists: []
 		}
 	},
@@ -65,6 +70,9 @@ export default {
     	this.lists = res.json();
     })
   },
+  components: {
+  	HeaderBar, 
+	}
 }
 </script>
 

@@ -1,15 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import Element from 'element-ui'
 
-import VueWeui from 'vue-weui'
 import App from './components/app.vue'
 import List from './components/list.vue'
 import Detail from './components/detail.vue'
+import CaseList from './components/caseList.vue'
+
 
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(Element)
+
 
 var Parent = { template: '<router-view></router-view>' }
 
@@ -17,15 +21,14 @@ var router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/', redirect: '/parent' }, 
+    { path: '/', redirect: '/main' }, 
     {
-      path: '/parent',
+      path: '/main',
       component: Parent,
       children: [
         { path: '', name: 'default', component: List },
-        { path: 'list', name: 'list', component: List },
         { path: 'detail', name: 'detail', component: Detail },
-
+        { path: 'caseList', name: 'caseList', component: CaseList },
       ]
     }
   ]
